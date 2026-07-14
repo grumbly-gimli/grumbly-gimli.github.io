@@ -1,1 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Computer Science & Systems Portfolio</title>
+    <style>
+        /* Base Styling & Variables */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --max-width: 800px;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* Header / Profile Section */
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .skills-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+
+        .skills-category h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience & Education Timelines */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.25rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+            gap: 0.5rem;
+        }
+
+        .job-title, .edu-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .company, .school {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .meta {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .card ul li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .card-header {
+                flex-direction: column;
+            }
+            .meta {
+                text-align: left;
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header / Intro Section -->
+        <header>
+            <h1>Your Name</h1>
+            <p class="subtitle">Computer Science Graduate & former Vet Tech</p>
+            <div class="profile-card">
+                <p>A high-honors Computer Science graduate and former Veterinary Technician combining rigorous analytical training with hands-on systems engineering experience. Proven track record of bridging complex software/hardware domains—from virtual reality molecular visualization to hardware sensor integration—developed at premier research and engineering institutions.</p>
+            </div>
+        </header>
+
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3>Programming</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">OCaml</span>
+                        <span class="skill-tag">Rust</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Frameworks & Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Qt/QML</span>
+                        <span class="skill-tag">RealityKit</span>
+                        <span class="skill-tag">SwiftUI</span>
+                        <span class="skill-tag">Metal</span>
+                        <span class="skill-tag">Blender</span>
+                        <span class="skill-tag">Unity</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Systems & Data</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">RISC-V</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Work History</h2>
+
+            <!-- Job 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="job-title">Data Analysis and Visualization Intern</div>
+                        <div class="company">National Renewable Energy Laboratory (NREL)</div>
+                    </div>
+                    <div class="meta">
+                        <div>Oct 2024 – Dec 2025</div>
+                        <div>Golden, CO</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Integrated real-time educational displays into a legacy Qt/QML codebase to make complex system data accessible to the general public.</li>
+                    <li>Developed an immersive virtual reality application using RealityKit, SwiftUI, and Metal to visualize molecular dynamics, allowing researchers to intuitively analyze complex scientific datasets.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="job-title">Veterinary Technician</div>
+                        <div class="company">Best Friends Animal Society</div>
+                    </div>
+                    <div class="meta">
+                        <div>Aug 2022 – July 2023</div>
+                        <div>Kanab, UT</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Organized and synthesized complex medical data into actionable clinical summaries for veterinary and care teams.</li>
+                    <li>Operated and calibrated computerized laboratory diagnostics equipment, maintaining strict quality control.</li>
+                    <li>Managed cross-functional communications under high-pressure scenarios to advocate for patient care and protocol compliance.</li>
+                </ul>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="job-title">Hardware Intern</div>
+                        <div class="company">Amazon Robotics</div>
+                    </div>
+                    <div class="meta">
+                        <div>Aug 2019 – Dec 2019</div>
+                        <div>Boulder, CO</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Independently designed, prototyped, and integrated hardware sensors to measure real-time acceleration on autonomous warehouse vehicles.</li>
+                    <li>Designed and executed controlled testing methodologies to analyze environmental and operational impacts on sensor payload performance.</li>
+                    <li>Processed and visualized experimental datasets using Python, presenting key engineering recommendations to stakeholders.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+
+            <!-- Edu 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="edu-title">B.S. in Computer Science (With Honors)</div>
+                        <div class="school">Colorado School of Mines</div>
+                    </div>
+                    <div class="meta">
+                        <div>Graduated May 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edu 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="edu-title">A.A.S. in Veterinary Technology</div>
+                        <div class="school">Colorado Mountain College</div>
+                    </div>
+                    <div class="meta">
+                        <div>Graduated May 2022</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Your Name. Built with simple, responsive HTML & CSS.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
